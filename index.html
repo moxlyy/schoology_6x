@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NES Player — Upload a .nes ROM</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>NES Player</h1>
+      <p class="muted">Upload a .nes ROM file from your computer to play it in the browser. For legal reasons, don't upload copyrighted ROMs that you don't own.</p>
+
+      <label class="filebox">
+        <input id="file" type="file" accept=".nes" />
+        <span>Select a .nes file</span>
+      </label>
+
+      <div id="info" class="info"></div>
+
+      <div id="controls" class="controls">
+        <button id="start" disabled>Start</button>
+        <button id="pause" disabled>Pause</button>
+        <button id="reset" disabled>Reset</button>
+
+        <label class="volume">
+          <input id="volume" type="range" min="0" max="100" value="80" />
+          <span id="vol-label">80%</span>
+        </label>
+
+        <button id="mute" class="mutebtn" aria-pressed="false" title="Mute">🔈</button>
+      </div>
+
+      <div class="player">
+        <canvas id="screen" width="256" height="240"></canvas>
+      </div>
+
+      <div class="kbd-help">
+        <strong>Default keyboard controls</strong>
+        <div>A: Z, B: X, Start: Enter, Select: Shift, D-pad: Arrow keys</div>
+      </div>
+
+      <div class="kbd-help">
+        <strong>Gamepad</strong>
+        <div>Plug in a gamepad and press Start to enable it — most standard controllers map automatically (A/B, D-pad/axes, Start/Select).</div>
+      </div>
+
+      <div class="kbd-help">
+        <strong>Audio</strong>
+        <div>Audio is produced with the Web Audio API and will start when you click <em>Start</em> (browser gesture required).</div>
+      </div>
+
+      <footer>
+        <small>Built with <a href="https://github.com/bfirsh/jsnes" target="_blank" rel="noopener noreferrer">jsnes</a>. Works offline on GitHub Pages.</small>
+      </footer>
+    </main>
+
+    <!-- jsnes from unpkg ensures the emulator runs client-side on plain static hosting -->
+    <script src="https://unpkg.com/jsnes/dist/jsnes.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
