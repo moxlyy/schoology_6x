@@ -50,7 +50,7 @@ python3 -m http.server 8000
 
 ---
 
-## 🔊 Audio & Performance
+## Audio & Performance
 
 - Runs at the original NES framerate: **60.0988 FPS**.
 - WebAudio API for smooth audio w/ resampling.
@@ -58,14 +58,14 @@ python3 -m http.server 8000
 
 ---
 
-## 🔈 Volume
+## Volume
 
 - UI slider controls volume from **0–100%**.
 - **Mute** temporarily silences audio without resetting your volume.
 
 ---
 
-## 🛠️ File Breakdown
+## File Breakdown
 
 - **`index.html`** — UI layout + controls  
 - **`js/app.js`** — emulator integration (`jsnes`), audio, gamepad mapping, framerate loop  
